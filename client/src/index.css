@@ -31,7 +31,6 @@ header a {
   padding: 20px;
   margin: 0 auto;
 }
-
 .coffee-buttons {
   position: absolute;
   top: 20px;
@@ -44,8 +43,13 @@ header a {
 /* homepage */
 .home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  grid-template-columns: 2fr 1fr;
+}
+.map-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: max-content;
 }
 .coffee-details {
   background: #fff;
@@ -54,6 +58,8 @@ header a {
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  width: 220px;
+  height: max-content;
 }
 .coffee-details h4 {
   margin: 0 0 10px 0;
@@ -75,10 +81,10 @@ header a {
 }
 
 /* new coffee form */
-label, input {
+label, input, textarea {
   display: block;
 }
-input {
+input, textarea {
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -86,6 +92,9 @@ input {
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
+}
+textarea {
+  font-family: Arial;
 }
 form button {
   background: var(--primary);
@@ -96,7 +105,7 @@ form button {
   border-radius: 4px;
   cursor: pointer;
 }
-div.error {
+.error {
   padding: 10px;
   background: #ffefef;
   border: 1px solid var(--error);

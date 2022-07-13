@@ -1,8 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 // pages & components
-import Home from './pages/Home'
-import Navbar from './components/Navbar'
+import Admin from './pages/Admin';
+import Home from './pages/Home';
+import SignUp from './pages/SignUp';
+import Login from './pages/Login';
+import Navbar from './components/Navbar';
 
 export default function App() {
   return (
@@ -12,6 +15,9 @@ export default function App() {
         <div className="pages">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </div>
       </Router>

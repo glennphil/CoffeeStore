@@ -25,6 +25,9 @@ const CoffeeDetails = ({ coffee }:any) => {
       <p><strong>Caffienated: </strong>{coffee.caffienated}</p>
       <p><strong>Origin: </strong>{coffee.origin}</p>
       <p><strong>Price: </strong>{coffee.price}</p>
+      <p><strong>Quantity: </strong>{coffee.quantity}</p>
+      <p><strong>Note: </strong>{coffee.note}</p>
+      <br/>
       <p>{formatDistanceToNow(new Date(coffee.createdAt), { addSuffix: true })}</p>
       <div className="coffee-buttons">
         <span className="material-symbols-outlined" onClick={handleDelete}>delete</span>

@@ -27,7 +27,7 @@ const getCoffee = async (req, res) => {
 
 // create a new coffee
 const createCoffee = async (req, res) => {
-  const {title, strength, flavor, caffienated, origin, price} = req.body
+  const {title, strength, flavor, caffienated, origin, price, quantity, note} = req.body
 
   let emptyFields = []
 
@@ -49,13 +49,19 @@ const createCoffee = async (req, res) => {
   if (!price) {
     emptyFields.push('price')
   }
+  if (!quantity) {
+    emptyFields.push('quantity')
+  }
+  if (!note) {
+    emptyFields.push('note')
+  }
   if (emptyFields.length > 0) {
     return res.status(400).json({ error: 'Please fill in all fields', emptyFields })
   }
 
   // add to the database
   try {
-    const coffee = await Coffee.create({ title, strength, flavor, caffienated, origin, price })
+    const coffee = await Coffee.create({ title, strength, flavor, caffienated, origin, price, quantity, note })
     res.status(200).json(coffee)
   } catch (error) {
     res.status(400).json({ error: error.message })
